@@ -3,9 +3,7 @@
         REQUESTER = "requester",
         COLOR = "color",
         FONT_SIZE = "font-size",
-        FONT_FAMILY= "font-family",
-        ADD_COLOR_BUT = "#EAEM_CP_ADD_COLOR",
-        REMOVE_COLOR_BUT = "#EAEM_CP_REMOVE_COLOR";
+        FONT_FAMILY= "font-family";
 
     if(queryParameters()[REQUESTER] !== SENDER ){
         return;
@@ -56,9 +54,7 @@
 
         $dialog[0].open = true;
 
-        var $addColor = $dialog.find(ADD_COLOR_BUT),
-            $removeColor = $dialog.find(REMOVE_COLOR_BUT),
-            color = queryParameters()[COLOR],
+        var color = queryParameters()[COLOR],
             size = queryParameters()[FONT_SIZE],
             fontFamily = queryParameters()[FONT_FAMILY],
            $colorPicker = $document.find("coral-colorinput");
@@ -88,11 +84,7 @@
 
         $colorPicker.css("margin-bottom", "285px");
 
-        $(ADD_COLOR_BUT).css("margin-left", "220px");
-
-        //$addColor.click(sendDataMessage);
-
-        $removeColor.click(sendRemoveMessage);
+       
     }
 
     function adjustHeader($dialog){
