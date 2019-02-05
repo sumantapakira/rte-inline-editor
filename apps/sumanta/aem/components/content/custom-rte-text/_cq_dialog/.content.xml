@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Inline style "
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+            margin="{Boolean}false"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <fonts
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Font family"
+                        name="./font-family">
+                        <items jcr:primaryType="nt:unstructured">
+                            <blank
+                                jcr:primaryType="nt:unstructured"
+                                text=""
+                                value=""/>
+                            <verdana
+                                jcr:primaryType="nt:unstructured"
+                                text="Verdana"
+                                value="verdana"/>
+                            <courier
+                                jcr:primaryType="nt:unstructured"
+                                text="Courier"
+                                value="courier"/>
+                            <cursive
+                                jcr:primaryType="nt:unstructured"
+                                text="Cursive"
+                                value="cursive"/>
+                            <fantasy
+                                jcr:primaryType="nt:unstructured"
+                                text="Fantasy"
+                                value="fantasy"/>
+                        </items>
+                    </fonts>
+                    <size
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                        fieldLabel="Font size"
+                        name="./font-size"/>
+                    <picker
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                        name="./color"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
