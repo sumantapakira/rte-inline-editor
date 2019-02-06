@@ -1,8 +1,8 @@
 
-var EAEMColorPickerDialog = new Class({
+var TextEditorDialog = new Class({
         extend: CUI.rte.ui.cui.AbstractDialog,
 
-        toString: "EAEMColorPickerDialog",
+        toString: "TextEditorDialog",
 
         initialize: function(config) {
             this.exec = config.execute;
@@ -75,12 +75,11 @@ var TouchUIColorPickerPlugin = new Class({
                     }
                 };
 
-            console.log($(tag).css("color"));
-
-            if(this.eaemColorPickerDialog){
-                dialog = this.eaemColorPickerDialog;
+           
+            if(this.textEditorDialog){
+                dialog = this.textEditorDialog;
             }else{
-                dialog = new EAEMColorPickerDialog();
+                dialog = new TextEditorDialog();
 
                 dialog.attach(propConfig, $container, this.editorKernel);
 
@@ -88,7 +87,7 @@ var TouchUIColorPickerPlugin = new Class({
                     .css("-moz-transform", "scale(0.9)").css("-moz-transform-origin", "0px 0px");
 
                 dialog.$dialog.find("iframe").attr("src", getPickerIFrameUrl(color,fontSize,fontFamily));
-               this.eaemColorPickerDialog = dialog;
+               this.textEditorDialog = dialog;
 
 
             }
@@ -155,10 +154,11 @@ var TouchUIColorPickerPlugin = new Class({
                     if (!_.isEmpty(message.data)) {
                         ek.relayCmd(id, message.data);
                     }
+                     plugin.textEditorDialog = null;
                 }else if(action === "remove"){
                     ek.relayCmd(id);
                 }else if(action === "cancel"){
-                    plugin.eaemColorPickerDialog = null;
+                    plugin.textEditorDialog = null;
                 }
                 dialog.hide();
 
